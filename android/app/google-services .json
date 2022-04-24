@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "760462292281-n6hjfk75ee8mnlota59ffucfs077obb6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flutter_app_medical",
+            "certificate_hash": "1ff4d926565af6dcf8f03b7f0eefb6e86a70ce7b"
+          }
+        },
+        {
           "client_id": "760462292281-u8a1fs4e1npvfv1jdl1cddp2feh51l9f.apps.googleusercontent.com",
           "client_type": 3
         }

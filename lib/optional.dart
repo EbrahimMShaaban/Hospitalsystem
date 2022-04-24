@@ -169,13 +169,9 @@ class optinal extends State<Home1> {
                                 "LOGIN",
                                 style: TextStyle(fontSize: 30),
                               ),
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const ElectronicServicesScreen()),
-                                );
+                              onPressed: () async{
+                                await loginNavigate(context);
+
                               }),
                           ElevatedButton(
 
@@ -183,26 +179,15 @@ class optinal extends State<Home1> {
                                 "Creat Account",
                                 style: TextStyle(fontSize: 30),
                               ),
-                              onPressed: () async {
-                                print(password);
-                                print(email);
+                              onPressed: ()   {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                      const ElectronicServicesScreen()),
+                                );
 
-
-                                var user = await signIn();
-                                if (user != null) {
-                                  Navigator.of(context)
-                                      .popUntil((route) => route.isFirst);
-                                  await Navigator.of(context).pushReplacement(
-                                      MaterialPageRoute(
-                                          builder: (context) => Home3()));
-                                }
-
-                                // Navigator.push(
-                                //   context,
-                                //   MaterialPageRoute(
-                                //       builder: (context) => Home3()),
-                                // );
-                              })
+                          })
                         ],
                       ),
                     ))
@@ -211,4 +196,16 @@ class optinal extends State<Home1> {
           )),
     ));
   }
+
+  loginNavigate(context)async{
+    var user = await signIn();
+    var uid= FirebaseAuth.instance.currentUser!.uid;
+
+    if(user != null){
+      Navigator.of(context).popUntil((route) => route.isFirst);
+      await  Navigator.of(context).pushReplacement(MaterialPageRoute(
+          builder: (context) =>  Home3()));
+    }
+  }
+
 }
