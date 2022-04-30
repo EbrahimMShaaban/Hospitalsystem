@@ -26,6 +26,82 @@ class MyApp extends StatelessWidget {
   }
 }
 
+class Test extends StatelessWidget {
+  const Test({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+        child: Scaffold(
+            body: Center(
+      child: Column(
+        children: [
+          TextButton(
+            onPressed: () {
+              print('one pressesd');
+            },
+            style: TextButton.styleFrom(
+              backgroundColor: Colors.red,
+            ),
+            child: Text('Tex Button', style: TextStyle(color: Colors.black)),
+            onLongPress: () {
+              print('long pressed');
+            },
+          ),
+          ElevatedButton(
+              onPressed: () {},
+              child: Text('text', style: TextStyle(color: Colors.black)),
+              style: ElevatedButton.styleFrom(
+                elevation: 10,
+                shadowColor: Colors.red,
+                onPrimary: Colors.green,
+                primary: Colors.amberAccent,
+              )),
+          OutlinedButton(
+            onPressed: () {},
+            child: Text(
+              'text',
+              style: TextStyle(color: Colors.black, fontSize: 90),
+            ),
+          ),
+          IconButton(
+            // onPressed: () {},
+            icon: Icon(Icons.phone),
+            iconSize: 40,
+            color: Colors.green,
+            focusColor: Colors.red,
+            highlightColor: Colors.red,
+            disabledColor: Colors.amberAccent,
+
+            onPressed: null,
+          ),
+          MaterialButton(
+            onPressed: null,
+            child: Text('text'),
+            disabledTextColor: Colors.green,
+            // disabledElevation: ,
+            disabledColor: Colors.red,
+          ),
+          Icon(
+            Icons.phone,
+            semanticLabel: 'phone',
+            color: Colors.green,
+            size: 40,
+          )
+        ],
+      ),
+    )));
+  }
+}
+/*
+Container(
+          height: 400,
+          width: 200,
+          color: Colors.blue,
+         // child:
+      ),
+ */
+
 class ElectronicServicesScreen extends StatelessWidget {
   const ElectronicServicesScreen({Key? key}) : super(key: key);
 

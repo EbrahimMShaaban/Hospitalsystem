@@ -5,7 +5,6 @@ import 'package:flutter_app_medical/sign%20up.dart';
 import 'dart:core';
 
 import 'constant/showloading.dart';
-import 'main.dart';
 
 class Home1 extends StatefulWidget {
   @override
@@ -184,7 +183,7 @@ class optinal extends State<Home1> {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                      const ElectronicServicesScreen()),
+                                       Home3()),
                                 );
 
                           })
@@ -198,14 +197,14 @@ class optinal extends State<Home1> {
   }
 
   loginNavigate(context)async{
-    var user = await signIn();
-    var uid= FirebaseAuth.instance.currentUser!.uid;
+     await signIn();
+    //var uid= FirebaseAuth.instance.currentUser!.uid;
 
-    if(user != null){
-      Navigator.of(context).popUntil((route) => route.isFirst);
-      await  Navigator.of(context).pushReplacement(MaterialPageRoute(
-          builder: (context) =>  Home3()));
-    }
+    // if(user != null){
+    //   Navigator.of(context).popUntil((route) => route.isFirst);
+    //   await  Navigator.of(context).pushReplacement(MaterialPageRoute(
+    //       builder: (context) =>  ElectronicServicesScreen()));
+    // }
   }
 
 }
