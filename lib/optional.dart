@@ -2,9 +2,11 @@ import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_medical/sign%20up.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'dart:core';
 
 import 'constant/showloading.dart';
+import 'main.dart';
 
 class Home1 extends StatefulWidget {
   @override
@@ -15,6 +17,8 @@ class Home1 extends StatefulWidget {
 
 class optinal extends State<Home1> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+
    String? email ,password;
 
 
@@ -24,9 +28,15 @@ class optinal extends State<Home1> {
       formdata.save();
       try {
         showLoading(context);
-        UserCredential userCredential = await FirebaseAuth.instance
-            .signInWithEmailAndPassword(email: email!, password: password!);
-        return userCredential;
+
+         await FirebaseAuth.instance
+            .signInWithEmailAndPassword(email: email!, password: password!).then((value) => {
+          Fluttertoast.showToast(msg: "Login Successful"),
+          Navigator.of(context).pushReplacement(
+              MaterialPageRoute(builder: (context) => ElectronicServicesScreen())),
+        });
+
+
       } on FirebaseAuthException catch (e) {
         print(e.code);
         if (e.code == 'user-not-found') {
