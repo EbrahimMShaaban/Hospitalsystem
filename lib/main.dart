@@ -1,7 +1,9 @@
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'chat/view.dart';
 import 'constants.dart';
 import 'custom_components.dart';
 import 'homeview.dart';
@@ -25,6 +27,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 
 
 /*
@@ -56,6 +59,8 @@ class ElectronicServicesScreen extends StatelessWidget {
                       fontSize: 30.0,
                       fontWeight: FontWeight.bold,
                       color: Colors.grey[700]),
+
+
                 )),
               ),
               height: MediaQuery.of(context).size.height * 0.3),
@@ -69,7 +74,7 @@ class ElectronicServicesScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: const [
-                    OptionButton(title: 'Chat', destination: ChatPage()),
+                    OptionButton(title: 'Chat', destination: ChatScreen()),
                     SizedBox(
                       height: 15.0,
                     ),
@@ -149,7 +154,7 @@ class AppointmentPage extends StatelessWidget {
               child: GestureDetector(
             onTap: () {
               Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => const BookingPage()));
+                  MaterialPageRoute(builder: (context) =>  BookingPage()));
             },
             child: const PageTitle(
               title: Text('booking',

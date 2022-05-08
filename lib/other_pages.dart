@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'constants.dart';
 import 'custom_components.dart';
 import 'models_and_data.dart';
+import 'optional.dart';
 
 class ChatPage extends StatelessWidget {
   const ChatPage({Key? key}) : super(key: key);
@@ -18,9 +19,14 @@ class ChatPage extends StatelessWidget {
   }
 }
 
-class BookingPage extends StatelessWidget {
+class BookingPage extends StatefulWidget {
   const BookingPage({Key? key}) : super(key: key);
 
+  @override
+  _BookingPageState createState() => _BookingPageState();
+}
+class _BookingPageState extends State<BookingPage>{
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -98,8 +104,20 @@ class BookingPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Book your appointment \n from your place',textAlign: TextAlign.center,style: TextStyle(color: titleColor,fontSize: 24.0),)
+                Text('Book your appointment \n from your place',
+                  textAlign: TextAlign.center,style: TextStyle(color: titleColor,fontSize: 24.0),)
               ],
+            ),
+            const Text("\n \n"),
+            ElevatedButton(
+                child: const Text(
+                  "Submit",
+                  style: TextStyle(fontSize: 30),
+                ),
+                onPressed: () {
+
+
+                }
             ),
           ],
         ),

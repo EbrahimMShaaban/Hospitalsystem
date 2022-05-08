@@ -232,6 +232,8 @@ class optinal extends State<Home3> {
                                     .add({
                                   "username": name,
                                   "email": email,
+                                  "number" : phone,
+
                                   "userid":
                                       FirebaseAuth.instance.currentUser!.uid,
                                 });
