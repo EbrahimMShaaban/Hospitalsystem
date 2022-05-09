@@ -1,4 +1,4 @@
-
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -21,14 +21,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      home: AnimatedSplashScreen(
+        splash: Image.asset("assets/logo.jpeg"),
+        splashIconSize: 200,
+        duration: 100,
+        animationDuration: Duration(seconds: 5),
+        nextScreen: const Home(),
+        splashTransition: SplashTransition.rotationTransition,
+      ),
     );
   }
 }
-
-
 
 /*
 Container(
@@ -59,8 +64,6 @@ class ElectronicServicesScreen extends StatelessWidget {
                       fontSize: 30.0,
                       fontWeight: FontWeight.bold,
                       color: Colors.grey[700]),
-
-
                 )),
               ),
               height: MediaQuery.of(context).size.height * 0.3),
@@ -153,8 +156,8 @@ class AppointmentPage extends StatelessWidget {
           Center(
               child: GestureDetector(
             onTap: () {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) =>  BookingPage()));
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => BookingPage()));
             },
             child: const PageTitle(
               title: Text('booking',

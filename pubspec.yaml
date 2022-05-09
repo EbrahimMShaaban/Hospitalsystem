@@ -41,6 +41,7 @@ dependencies:
   google_sign_in: ^4.4.0
   get_it: ^4.0.1
   firestore_search: ^0.1.5
+  animated_splash_screen:
 
 
   # The following adds the Cupertino Icons font to your application.
