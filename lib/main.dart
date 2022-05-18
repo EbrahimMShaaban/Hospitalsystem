@@ -8,7 +8,7 @@ import 'constants.dart';
 import 'custom_components.dart';
 import 'homeview.dart';
 import 'other_pages.dart';
-
+// todo: firebase booking must be added😭
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
