@@ -3,7 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'chat/view.dart';
+
 import 'constants.dart';
 import 'custom_components.dart';
 import 'homeview.dart';
@@ -77,7 +77,7 @@ class ElectronicServicesScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: const [
-                    OptionButton(title: 'Chat', destination: ChatScreen()),
+                    OptionButton(title: 'Chat', destination: ChatPage()),
                     SizedBox(
                       height: 15.0,
                     ),
